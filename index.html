@@ -38,6 +38,8 @@
                                 object = new THREE.Mesh(object, material);
                             }
                             el.setObject3D('mesh', object);
+                        }, undefined, function (error) {
+                            console.error('Erro ao carregar o modelo:', error);
                         });
                     } else {
                         console.error('Formato não suportado:', extension);
@@ -54,8 +56,10 @@
             }
         });
 
-        // Teste com um arquivo FBX
-        document.getElementById('model').setAttribute('load-model', 'https://borbatay.github.io/teste-movel/movel1.fbx');
+        // URL do modelo no GitHub Pages
+        const modeloUrl = 'https://borbatay.github.io/teste-movel/movel1.fbx';
+
+        document.getElementById('model').setAttribute('load-model', modeloUrl);
     </script>
 </body>
 </html>
